@@ -1,3 +1,4 @@
+#This is my  views
 from django.shortcuts import render
 
 def home(request):
