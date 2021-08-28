@@ -9,6 +9,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+
+    <style>
+      .good {background-color: #0C0;}
+      .Moderate {background-color: #FFFF00;}
+      .UnhealthyforSensitiveGroups {background-color: #FF9900;}
+      .Unhealthy {background-color: #FF0000 ;}
+      .VeryUnhealthy {background-color: #990066;}
+      .Hazardous {background-color: #660000 ;}
+    </style>
+
+
+
   </head>
   <body>
 
@@ -27,8 +39,9 @@
         
         
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <form action="{% url 'home' %}" class="d-flex" method="POST">
+          {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Enter Zipcode" aria-label="Search" name="zipcode">
         <button class="btn btn-outline-secondary" type="submit">Search</button>
       </form>
     </div>
